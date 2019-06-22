@@ -2,7 +2,7 @@
 My Own Discord Raiding tools !
 
 
-![dev](https://5.top4top.net/p_12682zygx1.png)
+![dev](https://2.top4top.net/p_1268btz9z1.png)
 
 # How To Run ?
 First Install The Packages:
