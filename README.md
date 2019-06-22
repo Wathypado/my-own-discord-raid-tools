@@ -10,7 +10,7 @@ First Install The Packages:
 npm i clear-it --save
 npm i termcolor --save
 npm i fs --save
-npm i readline-sync
+npm i readline-sync --save
 ```
 Step Two : Now Just Run It With command: node main.js
 
