@@ -18,3 +18,8 @@ Step Two : Now Just Run It With command: node main.js
 
 
 # Please if you a developer edit this toolbox and make your own edition and tell me
+
+
+# Last Updates :
+- Fix Bugs
+- Added New Feature (Voice Channel Join & Leave Spammer)
