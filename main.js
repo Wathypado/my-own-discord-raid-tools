@@ -32,6 +32,8 @@ print("")
 print("| 6. Raiding Server With Fake Accounts (Require Tokens !)")
 print("")
 print("| 7. Spam Voice Channel Joiner (JOIN & LEAVE INTERVAL)")
+print("")
+print("| 8. Spam Mention")
 print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
 print("-=-")
 print("")
@@ -185,7 +187,41 @@ save()
 var joiner = require("./tools/voicechanneljoiner.js")
 }
 
-if(option !== "1" && option !== "2" && option !== "3" && option !== "4" && option !== "5" && option !== "6" && option !== "7") {
+if(option === "8") {
+  clear()
+  print("*Important Note: The Tokens Should Be Typed In tokens.json file")
+  var choose = input.question("Please Select A Option DM or Server:")
+  if(choose !== "server" && choose !== "dm") return print("Nope, Please Select server or dm Only ! (Small Characters)")
+  if(choose == "server") {
+  var sid = input.question("Please Now Type The Server ID:")
+var vch = input.question("Please Now Type The Channel ID:")
+var men = input.question("Please Now Type The Mention User ID:")
+var dely = input.question("Please Now Type The Delay Time:")
+cache = {
+serverid: sid,
+channelid: vch,
+mention: men,
+delay: dely,
+dm: "off"
+}
+save()
+var joiner = require("./tools/MentionSpammer.js")
+}
+if(choose == "dm") {
+  var uid = input.question("Please Now Type The ID Of The Person Who Sends The Spam Mention:")
+var men = input.question("Please Now Type The Mention User ID:")
+var dely = input.question("Please Now Type The Delay Time:")
+cache = {
+userid: uid,
+mention: men,
+delay: dely,
+dm: "on"
+}
+save()
+var joiner = require("./tools/MentionSpammer.js")
+}
+}
+if(option !== "1" && option !== "2" && option !== "3" && option !== "4" && option !== "5" && option !== "6" && option !== "7" && option !== "8") {
 print("Nope, The Option Should Be 1-7 Only !")
 }
 
