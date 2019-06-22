@@ -4,9 +4,13 @@ const fs = require("fs");
 const cache = JSON.parse(fs.readFileSync("./caches.json", "utf8"))
 const config = JSON.parse(fs.readFileSync("./tokens.json", "utf8"))
 const token = config.tokens;
-
 client.on("ready", () => {
-    client.user.acceptInvite(cache.invite)
+    setInterval(() => {
+        client.guilds.get(cache.serverid).channels.get(cache.vchid).join().then(() => {
+            client.guilds.get(cache.serverid).voiceConnection.disconnect();
+    }, 5000);
+
+    })
 })
 
 token.forEach(acc => {

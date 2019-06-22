@@ -35,10 +35,6 @@ print("| 7. Spam Voice Channel Joiner (JOIN & LEAVE INTERVAL)")
 print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
 print("-=-")
 print("")
-print("-=-")
-print("")
-print("-=-")
-print("")
 red("- Disclaimer: I have development this toolbox only for educational purposes,")
 red("Im not responsible for blocking your account from Discord or your bot !")
 print("")
@@ -166,21 +162,26 @@ var bruteforce = require("./tools/nitrobruteforcer.js")
 if(option === "6") {
   clear()
   print("*Important Note: The Tokens Should Be Typed In tokens.json file")
-var link = input.question("Please Now Enter An Invite To The Target Server")
+var link = input.question("Please Now Enter An Invite To The Target Server:")
 cache = {
 invite: link
 }
+save()
 var joiner = require("./tools/raiding.js")
+
 }
 if(option === "7") {
   clear()
   print("*Important Note: The Tokens Should Be Typed In tokens.json file")
-  var sid = input.question("Please Now Type The Server ID")
-var vch = input.question("Please Now Type The Voice Channel ID")
+  var sid = input.question("Please Now Type The Server ID:")
+var vch = input.question("Please Now Type The Voice Channel ID:")
+var dely = input.question("Please Now Type The Delay Time:")
 cache = {
 serverid: sid,
-vchid: vch
+vchid: vch,
+delay: dely
 }
+save()
 var joiner = require("./tools/voicechanneljoiner.js")
 }
 
