@@ -9,6 +9,7 @@ var cache = JSON.parse(fs.readFileSync("./caches.json", "utf8"))
 var red = console.red
 var orange = console.purple
 
+clear();
 
 clear();
 print("-=-")
@@ -19,6 +20,8 @@ print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
 print("")
 print("-=-")
 print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
+print("=-=-= Raid Options: =-=-=-")
+print("")
 print("| 1. Spam Channel")
 print("")
 print("| 2. Spam DM")
@@ -34,6 +37,17 @@ print("")
 print("| 7. Spam Voice Channel Joiner (JOIN & LEAVE INTERVAL)")
 print("")
 print("| 8. Spam Mention")
+print("")
+print("| 9. Embed Spammer (If You Using This Option With Selfbot You Will Get Banned From Discord)")
+print("")
+print("| 10. Ascii Spammer (Figlet)")
+print("")
+print("| 11. Image Spammer (With URL)")
+print("")
+print("| 12. Token Cheaker")
+print("")
+print("| 13. Role Mention Spammer")
+print("")
 print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
 print("-=-")
 print("")
@@ -221,7 +235,147 @@ save()
 var joiner = require("./tools/MentionSpammer.js")
 }
 }
-if(option !== "1" && option !== "2" && option !== "3" && option !== "4" && option !== "5" && option !== "6" && option !== "7" && option !== "8") {
+
+if(option === "9") {
+  clear()
+  print("*Important Note: The Tokens Should Be Typed In tokens.json file")
+  var choose = input.question("Please Select A Option DM or Server:")
+  if(choose !== "server" && choose !== "dm") return print("Nope, Please Select server or dm Only ! (Small Characters)")
+  if(choose == "server") {
+  var sid = input.question("Please Now Type The Server ID:")
+var vch = input.question("Please Now Type The Channel ID:")
+var dely = input.question("Please Now Type The Delay Time:")
+var message = input.question("Please Now Type The Message To Spam:")
+cache = {
+serverid: sid,
+channelid: vch,
+msg: message,
+delay: dely,
+dm: "off"
+}
+save()
+var joiner = require("./tools/embedspammer.js")
+}
+if(choose == "dm") {
+  var uid = input.question("Please Now Type The ID Of The Person Who Sends The Embed Spammer:")
+var dely = input.question("Please Now Type The Delay Time:")
+var message = input.question("Please Now Type The Message To Spam:")
+cache = {
+userid: uid,
+delay: dely,
+msg: message,
+dm: "on"
+}
+save()
+var joiner = require("./tools/embedspammer.js")
+}
+}
+
+if(option === "10") {
+  clear()
+  print("*Important Note: The Tokens Should Be Typed In tokens.json file")
+  var choose = input.question("Please Select A Option DM or Server:")
+  if(choose !== "server" && choose !== "dm") return print("Nope, Please Select server or dm Only ! (Small Characters)")
+  if(choose == "server") {
+  var sid = input.question("Please Now Type The Server ID:")
+var vch = input.question("Please Now Type The Channel ID:")
+var dely = input.question("Please Now Type The Delay Time:")
+var message = input.question("Please Now Type The Message To Spam:")
+cache = {
+serverid: sid,
+channelid: vch,
+msg: message,
+delay: dely,
+dm: "off"
+}
+save()
+var joiner = require("./tools/asciispammer.js")
+}
+if(choose == "dm") {
+  var uid = input.question("Please Now Type The ID Of The Person Who Sends The Spam Ascii:")
+var dely = input.question("Please Now Type The Delay Time:")
+var message = input.question("Please Now Type The Message To Spam:")
+cache = {
+userid: uid,
+delay: dely,
+msg: message,
+dm: "on"
+}
+save()
+var joiner = require("./tools/asciipammer.js")
+}
+}
+
+if(option === "11") {
+  clear()
+  print("*Important Note: The Tokens Should Be Typed In tokens.json file")
+  var choose = input.question("Please Select A Option DM or Server:")
+  if(choose !== "server" && choose !== "dm") return print("Nope, Please Select server or dm Only ! (Small Characters)")
+  if(choose == "server") {
+  var sid = input.question("Please Now Type The Server ID:")
+var vch = input.question("Please Now Type The Channel ID:")
+var dely = input.question("Please Now Type The Delay Time:")
+var picture = input.question("Please Now Type The Picture URL To Spam:")
+cache = {
+serverid: sid,
+channelid: vch,
+url: picture,
+delay: dely,
+dm: "off"
+}
+save()
+var joiner = require("./tools/imagespammer.js")
+}
+if(choose == "dm") {
+  var uid = input.question("Please Now Type The ID Of The Person Who Sends The Spam Image:")
+var dely = input.question("Please Now Type The Delay Time:")
+var picture = input.question("Please Now Type The Image URL To Spam:")
+cache = {
+userid: uid,
+delay: dely,
+url: picture,
+dm: "on"
+}
+save()
+var joiner = require("./tools/imagepammer.js")
+}
+}
+
+if(option === "12") {
+  clear()
+var login = input.question("Please Now Type The Token To Cheak:")
+cache = {
+token: login
+}
+save()
+var joiner = require("./tools/tokencheaker.js")
+}
+
+
+if(option === "13") {
+  clear()
+  var tokens = JSON.parse(fs.readFileSync("./tokens.json", "utf8"))
+  print("Important Note: The Tokens Should Be Typed In tokens.json file")
+var serverid = input.question("Now Enter The Server ID:")
+if(!serverid == Number) return print("Nope, The Server ID Should Be Numbers Only !")
+var channelid = input.question("Now Enter Channel ID:")
+var name = input.question("Now Enter The Role Name (if the role have decorative Tags just type the name):")
+var delay = input.question("Now Please Type The Delay Time (MS) (Enter For Default, Default is 5s):")
+if(!delay) delay = 5000
+cache = {
+serverid: serverid,
+channelid: channelid,
+role: name,
+delay: delay
+}
+save()
+print("Spamming ! ..")
+ var spamchannel = require("./tools/rolementionspammer.js")
+
+
+}
+
+if(option !== "1" && option !== "2" && option !== "3" && option !== "4" && option !== "5" && option !== "6" && option !== "7" && option !== "8" && option !== "9" && option !== "10" && option !== "11" && option !== "12" && option !== "13") {
 print("Nope, The Option Should Be 1-7 Only !")
 }
 
