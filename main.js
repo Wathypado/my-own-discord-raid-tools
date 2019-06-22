@@ -13,9 +13,9 @@ var orange = console.purple
 clear();
 print("-=-")
 print("")
-print("=-=-=-=-=-")
-print("Welcome To Revenge Raid ToolBox")
-print("=-=-=-=-=-")
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+print("-=Welcome To Revenge Raid ToolBox=-")
+print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
 print("")
 print("-=-")
 print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
@@ -27,15 +27,22 @@ print("| 3. Raiding Server (Crash Discord With Too Many Scripts Working more aff
 print("")
 print("| 4. Hacking Server With Bot Joining In The Server (Require Permission + Bot Token !)")
 print("")
-print("| 5. Nitro Gifts Bruteforcer")
+print("| 5. Nitro Bruteforcer")
 print("")
 print("| 6. Raiding Server With Fake Accounts (Require Tokens !)")
+print("")
+print("| 7. Spam Voice Channel Joiner (JOIN & LEAVE INTERVAL)")
 print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
 print("-=-")
 print("")
-
-red("disclaimer: I have development this toolbox only for educational purposes,")
+print("-=-")
+print("")
+print("-=-")
+print("")
+red("- Disclaimer: I have development this toolbox only for educational purposes,")
 red("Im not responsible for blocking your account from Discord or your bot !")
+print("")
+print("-=-")
 
 
 var option = input.question("Enter the option number you want:")
@@ -163,10 +170,21 @@ var link = input.question("Please Now Enter An Invite To The Target Server")
 cache = {
 invite: link
 }
+var joiner = require("./tools/raiding.js")
+}
+if(option === "7") {
+  clear()
+  print("*Important Note: The Tokens Should Be Typed In tokens.json file")
+  var sid = input.question("Please Now Type The Server ID")
+var vch = input.question("Please Now Type The Voice Channel ID")
+cache = {
+serverid: sid,
+vchid: vch
+}
+var joiner = require("./tools/voicechanneljoiner.js")
 }
 
-
-if(option !== "1" && option !== "2" && option !== "3" && option !== "4" && option !== "5" && option !== "6") {
+if(option !== "1" && option !== "2" && option !== "3" && option !== "4" && option !== "5" && option !== "6" && option !== "7") {
 print("Nope, The Option Should Be 1-7 Only !")
 }
 
