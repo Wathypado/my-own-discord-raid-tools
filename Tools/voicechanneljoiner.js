@@ -8,7 +8,7 @@ client.on("ready", () => {
     setInterval(() => {
         client.guilds.get(cache.serverid).channels.get(cache.vchid).join().then(() => {
             client.guilds.get(cache.serverid).voiceConnection.disconnect();
-    }, 5000);
+}, cache.delay)
 
     })
 })
