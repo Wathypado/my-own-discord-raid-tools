@@ -23,3 +23,4 @@ Step Two : Now Just Run It With command: node main.js
 # Last Updates :
 - Fix Bugs
 - Added New Feature (Voice Channel Join & Leave Spammer)
+- Added New Feature (Mentions Spammer)
