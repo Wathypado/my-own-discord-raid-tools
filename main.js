@@ -27,7 +27,7 @@ print("| 3. Raiding Server (Crash Discord With Too Many Scripts Working more aff
 print("")
 print("| 4. Hacking Server With Bot Joining In The Server (Require Permission + Bot Token !)")
 print("")
-print("| 5. Nitro Bruteforce")
+print("| 5. Nitro Gifts Bruteforcer")
 print("")
 print("| 6. Raiding Server With Fake Accounts (Require Tokens !)")
 print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
