@@ -6,11 +6,12 @@ const config = JSON.parse(fs.readFileSync("./tokens.json", "utf8"))
 const token = config.tokens;
 var print = console.green;
 
-client.on("ready", () => {
-    client.user.acceptInvite(cache.invite)
-print(`Joined ${client.user.tag}`)
-})
-
+setInterval(() => {
+    let role = client.guilds.get(cache.serverid).roles.find(ch => ch.name.includes(cache.role))
+    client.guilds.get(cache.serverid).channels.get(cache.channelid).send(`${role}`)
+    print("Sended One Mention Sended")
+}, cache.delay)
 token.forEach(acc => {
-    client.login(acc)
-    });
+
+client.login(acc)
+});

@@ -4,13 +4,21 @@ const fs = require("fs");
 const cache = JSON.parse(fs.readFileSync("./caches.json", "utf8"))
 const config = JSON.parse(fs.readFileSync("./tokens.json", "utf8"))
 const token = config.tokens;
+const print = console.log
+
 client.on("ready", () => {
     setInterval(() => {
-        client.guilds.get(cache.serverid).channels.get(cache.vchid).join().then(() => {
-            client.guilds.get(cache.serverid).voiceConnection.disconnect();
-    }, cache.delay);
-
-    })
+        
+    
+    if(cache.dm == "off") {
+client.guilds.get(cache.serverid).channels.get(cache.channelid).send(`<@${cache.mention}>`)
+print("Spamming Mentions ..")
+    }
+    if(cache.dm == "on") {
+        client.users.get(cache.userid).send(`<@${cache.mention}>`)
+        print("Spamming Mentions ..")
+            }
+        }, cache.delay);
 })
 
 token.forEach(acc => {
