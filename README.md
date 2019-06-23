@@ -22,7 +22,7 @@ Step Two : Now Just Run It With command: node main.js
 
 
 # Last Updates :
-- Fix Bugs
+- Fix Bugs Like (Hacking Server Option , etc)
 - Added New Feature (Voice Channel Join & Leave Spammer)
 - Added New Feature (Mentions Spammer)
 - Added New Feature (Role Mention Spammer)
