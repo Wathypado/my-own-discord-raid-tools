@@ -2,7 +2,7 @@
 My Own Discord Raiding tools !
 
 
-![dev](https://3.top4top.net/p_12683dvh31.png)
+![dev](https://3.top4top.net/p_1286at6io1.png)
 
 # How To Run ?
 First Install The Packages:
@@ -30,3 +30,4 @@ Step Two : Now Just Run It With command: node main.js
 - Added New Feature (Image Spammer)
 - Added New Feature (Ascii Spammer)
 - Added New Feature (Token Cheaker)
+- Added New Feature (Reaction Spammer (BETA))
