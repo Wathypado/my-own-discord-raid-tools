@@ -1,4 +1,5 @@
-# my-own-discord-raid-tools
+# My Own Discord Raiding tools !
+# UNDER DEVELOPMENT
 My Own Discord Raiding tools !
 
 
@@ -15,7 +16,7 @@ npm i figlet --save
 ```
 Step Two : Now Just Run It With command: node main.js
 
-# IM THE CREATOR !
+# All rights are reserved to me ! please dont be kid and share this without type the rights because i will kick your ass.
 
 
 # Please if you a developer edit this toolbox and make your own edition and tell me
